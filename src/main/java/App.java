@@ -10,19 +10,38 @@ public class App {
 
     public static void main(String[] args) {
         Car car = new Car("A","brandA");
-        car.speedUp(201);
-        /*Vehicle vehicleA = new Vehicle("A","Abrand");
-        Vehicle vehicleB = new Vehicle("B","Bbrand");
+//        car.speedUp(180);
+//        System.out.println("\n");
+//        car.speedUp(201);
+        Vehicle vehicleA = new Vehicle("A","brandA");
+        Vehicle vehicleB = new Vehicle("B","brandB");
+//
+//        System.out.println(new App().getGreeting());
+//        vehicleA.speedUp(30);
+//        System.out.println("\n");
+//        vehicleB.speedUp(40);
 
-        *//*System.out.println(new App().getGreeting());*//*
-*//*        vehicleA.speedUp(30);
-        System.out.println("\n");
-        vehicleB.speedUp(40);*//*
-        */
+        Driver driver = new Driver (vehicleA,"abc");
+        driver.speedUp(300);
     }
 
 
+}
 
+class Driver{
+    private Vehicle vehicle;
+    private String name;
+
+    public Driver(Vehicle vehicle, String name){
+        this.vehicle = vehicle;
+        this.name = name;
+
+    }
+
+    public void speedUp(int speed){
+        System.out.println("Driver: "+this.name);
+        this.vehicle.speedUp(speed);
+    }
 }
 
 
