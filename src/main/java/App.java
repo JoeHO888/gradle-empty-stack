@@ -6,7 +6,31 @@ public class App {
         return "Hello world.";
     }
 
+
+
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        Vehicle vehicleA = new Vehicle("A","Abrand");
+        Vehicle vehicleB = new Vehicle("B","Bbrand");
+
+        /*System.out.println(new App().getGreeting());*/
+        vehicleA.speedUp(30);
+        System.out.println("\n");
+        vehicleB.speedUp(40);
+    }
+}
+
+
+class Vehicle {
+
+    private String name;
+    private String brand;
+
+    public Vehicle (String name,String brand){
+        this.name = name;
+        this.brand = brand;
+    }
+
+    public void speedUp(Integer speed){
+        System.out.println("Car Name: "+this.name+"\n"+"Brand: "+this.brand+"Speed: "+speed);
     }
 }
