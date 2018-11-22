@@ -31,6 +31,6 @@ class Vehicle {
     }
 
     public void speedUp(Integer speed){
-        System.out.println("Car Name: "+this.name+"\n"+"Brand: "+this.brand+"Speed: "+speed);
+        System.out.println("Car Name: "+this.name+"\n"+"Brand: "+this.brand+"\n"+"Speed: "+speed);
     }
 }
