@@ -9,20 +9,27 @@ public class App {
 
 
     public static void main(String[] args) {
-        Car car = new Car("A","brandA");
+        Car car = new Car("Car","brandA");
 //        car.speedUp(180);
 //        System.out.println("\n");
 //        car.speedUp(201);
-        Vehicle vehicleA = new Vehicle("A","brandA");
-        Vehicle vehicleB = new Vehicle("B","brandB");
+        Vehicle vehicleA = new Vehicle("Vehicle","brandA");
+//        Vehicle vehicleB = new Vehicle("B","brandB");
 //
 //        System.out.println(new App().getGreeting());
 //        vehicleA.speedUp(30);
 //        System.out.println("\n");
 //        vehicleB.speedUp(40);
+        Bus bus = new Bus("Bus","brandA");
 
-        Driver driver = new Driver (vehicleA,"abc");
-        driver.speedUp(300);
+        Driver vehicleDriver = new Driver (vehicleA,"abc");
+        vehicleDriver.speedUp(300);
+        System.out.println("\n");
+        Driver carDriver = new Driver (car,"abcd");
+        carDriver.speedUp(300);
+        Driver busDriver = new Driver (bus,"abcde");
+        busDriver.speedUp(2);
+
     }
 
 
@@ -55,6 +62,25 @@ class Car extends Vehicle{
     @Override
     public void speedUp(int speed){
         if(speed<=200){
+            super.speedUp(speed);
+        }else{
+            System.out.println("Fail to speed up");
+        }
+    }
+
+
+}
+
+class Bus extends Vehicle{
+
+    public Bus (String name,String brand){
+        super(name, brand);
+    }
+
+
+    @Override
+    public void speedUp(int speed){
+        if(speed<=2){
             super.speedUp(speed);
         }else{
             System.out.println("Fail to speed up");
